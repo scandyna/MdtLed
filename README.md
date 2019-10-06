@@ -3,12 +3,12 @@
 LED indicator based on Qt5
 
 MdtLed is based on [Qt5](https://www.qt.io)
-and also uses tools like CMake and Conan.
+and also uses tools like [CMake](https://cmake.org) and [Conan](https://conan.io).
 
 Conan is optional, but using it is easier.
 
 To install and configure the different tools, you could take a look at
-[Build and install C++](https://gitlab.com/scandyna/build-and-install-cpp) .
+[Build and install C++ software](https://gitlab.com/scandyna/build-and-install-cpp) .
 
 # Using MdtLed
 
@@ -41,7 +41,7 @@ mkdir build && cd build
 
 Install the dependencies and configure the build:
 ```bash
-conan install path/to/YourSource
+conan install "path/to/YourSource"
 cmake -D "CMAKE_TOOLCHAIN_FILE=conan_paths.cmake" "path/to/YourSource"
 ```
 
