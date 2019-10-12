@@ -76,7 +76,7 @@ make -j4 && make install
 
 MdtLed will be build and installed in the location specified by CMAKE_INSTALL_PREFIX .
 
-### Use MdtLed in your project
+### Configure the build of your project using MdtLed
 
 From your build directory, configure your build:
 ```bash

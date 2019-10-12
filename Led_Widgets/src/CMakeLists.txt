@@ -1,14 +1,14 @@
 
-add_library(Led Mdt/Led.cpp)
+add_library(MdtLed Mdt/Led.cpp)
 target_link_libraries(
- Led
+ MdtLed
   PUBLIC
     Qt5::Widgets
   PRIVATE
     BuildSpecifications
 )
 if(BUILD_USE_IPO_LTO)
-  set_property(TARGET Led PROPERTY INTERPROCEDURAL_OPTIMIZATION TRUE)
+  set_property(TARGET MdtLed PROPERTY INTERPROCEDURAL_OPTIMIZATION TRUE)
 endif()
 
 

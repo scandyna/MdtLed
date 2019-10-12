@@ -138,6 +138,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
 message("CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
+message("CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
 
 # TODO must use target_compile_definitions(target PRIVATE ${QT_NO_CAST_DEFINITIONS}) , else it will propagate to the uer of the library
 # add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)

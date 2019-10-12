@@ -1,9 +1,0 @@
-[requires]
-MdtCMakeModules/0.1@scandyna/testing
-
-[generators]
-cmake_paths
-
-[options]
-qt:shared=True
-MdtLed:shared=True

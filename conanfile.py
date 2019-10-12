@@ -6,11 +6,16 @@ class MdtLedConan(ConanFile):
   license = "LGPL-3.0-only"
   url = "https://github.com/scandyna/MdtLed"
   description = "LED indicator based on Qt5"
-  generators = "cmake"
+  settings = "os", "compiler", "build_type", "arch"
+  options = {"shared": [True, False]}
+  default_options = {"shared": True}
+  requires = "MdtCMakeModules/0.2@scandyna/testing"
+  generators = "cmake_paths"
   exports_sources="*" # Conan seems to be smart enough to not copy test_package/build
 
   def build(self):
     cmake = CMake(self)
+    cmake.definitions["CMAKE_TOOLCHAIN_FILE"] = "%s/conan_paths.cmake" % (self.build_folder)
     cmake.configure()
     cmake.build()
 
