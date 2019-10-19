@@ -17,10 +17,10 @@ This section describes how to use MdtLed in your project with CMake.
 Modify your CMakeLists.txt to use MdtLed:
 ```cmake
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
-find_package(MdtLed REQUIRED)
+find_package(Mdt COMPONENTS Led REQUIRED)
 
 add_executable(myApp source.cpp)
-target_link_libraries(myApp Qt5::Widgets MdtLed)
+target_link_libraries(myApp Qt5::Widgets Mdt::Led)
 ```
 
 ## Using MdtLed with Conan

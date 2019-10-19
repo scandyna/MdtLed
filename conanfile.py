@@ -9,7 +9,7 @@ class MdtLedConan(ConanFile):
   settings = "os", "compiler", "build_type", "arch"
   options = {"shared": [True, False]}
   default_options = {"shared": True}
-  requires = "MdtCMakeModules/0.2@scandyna/testing"
+  requires = "MdtCMakeModules/0.3@scandyna/testing"
   generators = "cmake_paths"
   exports_sources="*" # Conan seems to be smart enough to not copy test_package/build
 

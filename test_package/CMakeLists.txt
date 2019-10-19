@@ -6,6 +6,8 @@ project(MdtLedTest)
 message("CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
+
+# TODO add a version to check xxxConfigVersion.cmake
 find_package(MdtLed REQUIRED)
 
 enable_testing()

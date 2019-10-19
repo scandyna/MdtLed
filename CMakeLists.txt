@@ -27,7 +27,7 @@ if( ( (${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU") OR (${CMAKE_CXX_COMPILER_ID} MAT
 endif()
 
 option(BUILD_SHARED_LIBS "Build as shared library" ON)
-option(WARNING_AS_ERROR "Threat warnings as errors" ON)
+option(WARNING_AS_ERROR "Threat warnings as errors" OFF)
 set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS Debug Release RelWithDebInfo MinSizeRel Custom)
 option(BUILD_DESIGNER_PLUGIN "Build the plugin for Qt Designer" ON)
 option(BUILD_TESTS "Build the tests" ON)
@@ -140,8 +140,16 @@ set(CMAKE_AUTOUIC ON)
 message("CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
 message("CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
 
+# TODO GCC/Clang: see -fvisibility=hidden and -fvisibility-inlines-hidden (s.a. STL, Boost, they probably export properly, but check)
+#                 see CMAKE_CXX_VISIBILITY_PRESET hidden , CMAKE_VISIBILITY_INLINES_HIDDEN YES
+
+# TODO GenerateExportHeader
+
 # TODO must use target_compile_definitions(target PRIVATE ${QT_NO_CAST_DEFINITIONS}) , else it will propagate to the uer of the library
 # add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)
+
+# TODO Maybe some global specs ? See add_compile_options()
+#         Really should do global..
 
 add_library(BuildSpecifications INTERFACE)
 if(SANITIZER_OPTIONS)

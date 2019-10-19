@@ -1,4 +1,5 @@
 #include "LedTest.h"
+#include "Mdt/Led.h"
 #include <QtTest/QtTest>
 #include <QApplication>
 
