@@ -145,6 +145,11 @@ message("CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
 
 # TODO GenerateExportHeader
 
+# TODO Do not install things in /usr/include/--/Mdt (mdt allready exists), but Mdt0
+#       Same for libs: libMdt0Led.so , not libMdtLed.so
+
+# TODO Versionning
+
 # TODO must use target_compile_definitions(target PRIVATE ${QT_NO_CAST_DEFINITIONS}) , else it will propagate to the uer of the library
 # add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)
 
