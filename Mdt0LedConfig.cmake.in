@@ -1,0 +1,14 @@
+
+include("${CMAKE_CURRENT_LIST_DIR}/Mdt0LedTargets.cmake")
+
+# message("CMAKE_FIND_PACKAGE_NAME: ${CMAKE_FIND_PACKAGE_NAME}")
+
+# Set the package name as a property of the target defined in this package
+# This property will be used later when this package is a dependency of a other package
+# set_target_properties(Mdt0::Led PROPERTIES INTERFACE_FIND_PACKAGE_NAME Mdt0Led)
+
+# get_target_property(deps Mdt0::Led INTERFACE_LINK_LIBRARIES)
+# message("deps: ${deps}")
+# 
+# get_target_property(Mdt0LedPackageName Mdt0::Led INTERFACE_FIND_PACKAGE_NAME)
+# message("Mdt0LedPackageName: ${Mdt0LedPackageName}")

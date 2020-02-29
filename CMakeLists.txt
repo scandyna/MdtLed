@@ -3,8 +3,12 @@ cmake_minimum_required(VERSION 3.10)
 
 project(MdtLed VERSION 0.0.1)
 
+# TODO Should be removed from here !
 set(CMAKE_CXX_STANDARD 14)
 # set(CMAKE_C_STANDARD 11)
+
+set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+set(CMAKE_VISIBILITY_INLINES_HIDDEN YES)
 
 
 set(MDT_CMAKE_MODULE_PREFIX_PATH CACHE PATH "Path to the root of MdtCMakeModules. (For example: /opt/MdtCMakeModules).")
@@ -19,6 +23,7 @@ set(QT_PREFIX_PATH CACHE PATH "Path to the root of Qt distribution. (For example
 add_qt5_to_cmake_prefix_path("${QT_PREFIX_PATH}")
 
 # Sanitizers are available for Clang and gcc on 64 bit , non Windows architecture
+# TODO maybe only on 64bit (not Mingw or not) Also, VS2019 integrates it
 if( ( (${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU") OR (${CMAKE_CXX_COMPILER_ID} MATCHES "Clang") ) AND (${CMAKE_SIZEOF_VOID_P} EQUAL 8) AND (NOT WIN32) )
   option(SANITIZER_ENABLE_ADDRESS "Enable address sanitizer" OFF)
   option(SANITIZER_ENABLE_LEAK "Enable leak sanitizer" OFF)
@@ -140,8 +145,6 @@ set(CMAKE_AUTOUIC ON)
 message("CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
 message("CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
 
-# TODO GCC/Clang: see -fvisibility=hidden and -fvisibility-inlines-hidden (s.a. STL, Boost, they probably export properly, but check)
-#                 see CMAKE_CXX_VISIBILITY_PRESET hidden , CMAKE_VISIBILITY_INLINES_HIDDEN YES
 
 # TODO GenerateExportHeader
 

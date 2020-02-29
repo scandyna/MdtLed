@@ -7,7 +7,7 @@ void MdtLedTestPackage::runled()
 {
   Mdt::Led led;
 
-  led->show();
+  led.show();
 
   QTest::qWait(100);
 }
